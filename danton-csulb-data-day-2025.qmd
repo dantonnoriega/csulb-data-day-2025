@@ -1,0 +1,132 @@
+---
+title: '"Vibecoding" with Guardrails'
+subtitle: "How LLMs Have Transformed My Data Science Workflow"
+author: "<b>Danton Noriega-Goodwin</b>"
+date: "March 22, 2025"
+format: 
+  revealjs:
+    logo: img/long-beach-compton-data-science-csun-footer-600px.png
+    footer: "Data Data at the Beach 2025"
+    title-slide-attributes:
+      data-background-image: img/long-beach-compton-data-science-csun-title-250px.png
+      data-background-size: contain      
+    include-in-header: 
+      text: |
+        <style>
+        .v-center-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 90%;
+        </style>
+---
+
+# Breakout Session
+
+## Overview
+
+. . .
+
+
+- Learning Goals & Motivation
+- Problem & Solution
+- Approach
+- Hack & Code!
+
+## Learning Goals
+
+Experience with, and exposure to, the following
+
+. . .
+
+- R Programming
+- Browser Developer View (Chrome & Safari)
+- APIs
+- Mutual and Exchange Traded Funds (ETFs)
+
+# Motivation
+
+## Personal Finance
+
+- Maximize Annual Roth IRA Contribution
+- General Portfolio Diversification (`AAPL -> ETFs`)
+
+. . .
+
+### Research Goal
+
+Select the smallest set of ETFs (or Mutual Funds) that achieves
+
+1. Diversification
+2. Minimal cost
+3. Balanced Risk
+
+## Problem
+
+ETF websites are *purposefully* annoying.
+
+. . .
+
+- Cumbersome to access ETF portfolios (holdings) data
+- Impossible to do basic analysis and comparisons
+- Make you pay to access additional information
+
+## Solution {.center}
+
+*Find a website with an API that is easy to reverse engineer.*
+
+# 👀 [etf.com](https://www.etf.com)
+
+## Approach
+
+Design an R program that
+
+* Takes ETF tickers (e.g. `VOO`) as inputs
+* Fetches ETF holdings data from the API
+* Processes and returns a nested dataframe of holdings data
+  * e.g. dataframe with columns  
+    `ticker<chr>, data<list>`
+
+# 🤘 Let's Rock 🎸 {.center}
+
+## Hack
+
+### Browser *Web Inspector*
+
+- Safari
+  - Menu *Settings (`⌘ ,`) > Advanced > "Show Web Features for Web Developers"*
+  - Menu *Develop > Show Web Inspector (`⌥ ⌘ i`)*
+- Chrome
+  - Menu *View > Developer > "Developer Tools" (`⌥ ⌘ i`)*
+
+## Hack
+
+### Inspect `etf.com/VOO`
+
+- Go to [etf.com/VOO](https://www.etf.com/VOO)
+  - *Developer Tools / Web Inspector* > *Network*
+- Click *Holdings*
+  - Scroll down to *View All*
+- Web Inspector filter to *"XHR/Fetch"*
+  - Find `holdings` > Right-click *"Copy as cURL"*
+- Paste and interrogate!
+
+## 📺 Youtube Video
+
+{{< video https://youtu.be/2L42vLAiM28 width="1100" height="550" >}}
+
+## Code
+
+[Session is complete, but here are the scripts!]
+
+- [`get-etf_fund_holdings.r`](https://github.com/dantonnoriega/csulb-data-day-2024/blob/main/R/get-etf_fund_holdings.r)
+- [`get-etf_gh_files.r`](https://github.com/dantonnoriega/csulb-data-day-2024/blob/main/R/get-etf_gh_files.r)
+ 
+### 🧑‍💻 Let's code.
+
+# Resources
+
+* Find everything from today!  
+  [**👩🏽‍💻 github.com/dantonnoriega/csulb-data-day-2024**](https://github.com/dantonnoriega/csulb-data-day-2024)
+* Stay in touch!  
+  [**🌐 danton.codes**](http://danton.codes)
