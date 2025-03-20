@@ -1,0 +1,6 @@
+instance_type,requests_per_hour,cost_per_hour
+micro,100,0.012
+small,250,0.024
+medium,600,0.048
+large,1500,0.096
+xlarge,4000,0.192
