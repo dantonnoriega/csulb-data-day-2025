@@ -64,23 +64,23 @@ allocations = [cost_efficiency_allocation, performance_allocation, balanced_allo
 
 for strategy, allocation in zip(strategies, allocations):
     # Calculate total capacity
-    total_capacity = sum(
+    hourly_capacity = round(sum(
         count * instance_profiles.filter(pl.col("instance_type") == instance_type)["requests_per_hour"].item()
         for instance_type, count in allocation.items()
-    )
+    ), 3)
     
     # Calculate total cost
-    total_cost = sum(
+    total_cost = round(sum(
         count * instance_profiles.filter(pl.col("instance_type") == instance_type)["cost_per_hour"].item()
         for instance_type, count in allocation.items()
-    )
+    ), 3)
     
     print(f"\nStrategy: {strategy}")
     print(f"  Allocation: {allocation}")
-    print(f"  Total capacity: {total_capacity} requests/hour")
+    print(f"  Total capacity: {hourly_capacity} requests/hour")
     print(f"  Hourly cost: ${total_cost:.4f}")
     print(f"  Monthly cost: ${total_cost * 24 * 30:.2f}")
-    print(f"  Cost per 1000 requests: ${total_cost / total_capacity * 1000:.4f}")
+    print(f"  Cost per 1000 requests: ${total_cost / hourly_capacity * 1000:.4f}")
 
 # %% Calculate service metrics for each scenario and strategy
 results = []
@@ -90,22 +90,22 @@ for scenario in scenarios_df["scenario"].unique():
     
     for strategy, allocation in zip(strategies, allocations):
         # Calculate total capacity
-        total_capacity = sum(
+        hourly_capacity = round(sum(
             count * instance_profiles.filter(pl.col("instance_type") == instance_type)["requests_per_hour"].item()
             for instance_type, count in allocation.items()
-        )
+        ), 3)
         
         # Calculate total cost
-        total_cost = sum(
+        total_cost = round(sum(
             count * instance_profiles.filter(pl.col("instance_type") == instance_type)["cost_per_hour"].item()
             for instance_type, count in allocation.items()
-        )
+        ), 3)
         
         # Calculate unserved requests (where demand > capacity)
         scenario_data_with_metrics = scenario_data.with_columns([
-            pl.lit(total_capacity).alias("capacity"),
-            pl.when(pl.col("requests") > total_capacity)
-                .then(pl.col("requests") - total_capacity)
+            pl.lit(hourly_capacity).alias("capacity"),
+            pl.when(pl.col("requests") > hourly_capacity)
+                .then(pl.col("requests") - hourly_capacity)
                 .otherwise(0).alias("unserved_requests"),
             pl.col('datetime').dt.strftime("%Y-%m").alias('ym')
         ])
@@ -121,7 +121,7 @@ for scenario in scenarios_df["scenario"].unique():
         over_capacity_percent = hours_over_capacity / total_hours * 100
         
         # Calculate average utilization
-        avg_utilization = scenario_data_with_metrics["requests"].sum() / (total_hours * total_capacity) * 100
+        avg_utilization = scenario_data_with_metrics["requests"].sum() / (total_hours * hourly_capacity) * 100
         
         # Monthly cost
         n_months = scenario_data_with_metrics['ym'].unique().len()
@@ -131,7 +131,7 @@ for scenario in scenarios_df["scenario"].unique():
         results.append({
             "scenario": scenario,
             "strategy": strategy,
-            "total_capacity": total_capacity,
+            "hourly_capacity": hourly_capacity,
             "hourly_cost": total_cost,
             "monthly_cost": avg_monthly_cost,
             "service_rate": service_rate,
@@ -142,6 +142,13 @@ for scenario in scenarios_df["scenario"].unique():
 # Convert to DataFrame
 results_df = pl.DataFrame(results)
 print(results_df)
+
+(
+  results_df
+  .select(['strategy', 'hourly_capacity', 'hourly_cost'])
+  .unique()
+  .write_csv(Path('../data/compute_allocation_strategies.csv'))
+)
 
 # %% Analyze the results
 # Print summary table

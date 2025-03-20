@@ -2,6 +2,7 @@
 import plotnine as p9
 import polars as pl
 import numpy as np
+import json
 from datetime import datetime, timedelta
 import random
 import os
@@ -10,7 +11,16 @@ from pathlib import Path
 # Set random seed for reproducibility
 np.random.seed(42)
 
-# Define instance profiles
+# %%
+instance_profiles_dict = {
+ 'micro':  {'requests_per_hour': 100,  'cost_per_hour': 0.012},
+ 'small':  {'requests_per_hour': 250,  'cost_per_hour': 0.024},
+ 'medium': {'requests_per_hour': 600,  'cost_per_hour': 0.048},
+ 'large':  {'requests_per_hour': 1500, 'cost_per_hour': 0.096},
+ 'xlarge': {'requests_per_hour': 4000, 'cost_per_hour': 0.192}
+}
+
+# %% Define instance profiles
 def create_instance_profiles():
     """Create profiles for 5 different compute instance types"""
     
@@ -186,7 +196,11 @@ print("Saving data to CSV files...")
 df.write_csv(Path('../data/compute_request_scenarios.csv'))
 instance_profiles.write_csv(Path('../data/compute_instance_profiles.csv'))
 
-# create plots
+# Write the JSON data to a file
+# with open(Path('../data/compute_instance_profiles.json'), "w") as file:
+#     json.dump(instance_profiles_dict, file, indent=4)
+
+# %% create plots
 print("Creating visualization plots...")
 create_plots(df)
 
