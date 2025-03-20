@@ -4,9 +4,17 @@ A collection of links and materials relevant to Danton Noriega-Goodwin's Breakou
 
 ## Artifacts
 
-### Breakout Session Slides
+### Breakout Session
 
--   <https://dantonnoriega.github.io/csulb-data-day-2025/slides.html>
+#### Slides
+
+* https://dantonnoriega.github.io/csulb-data-day-2025/slides.html
+
+#### Colab Notebook
+
+* https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb
+  * Top left, click "Open in Colab"
+  * _Requires a Google Account!_
 
 ### Python Scripts
 
