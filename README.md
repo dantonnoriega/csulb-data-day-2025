@@ -2,23 +2,18 @@
 
 A collection of links and materials relevant to Danton Noriega-Goodwin's Breakout Session from Saturday, 2025-03-22.
 
-## Presentation / Slides
+## Artifacts
 
-### Breakout session slides
+### Breakout Session Slides
 
 -   <https://dantonnoriega.github.io/csulb-data-day-2025/slides.html>
 
-### R Scripts
+### Python Scripts
 
--   [`R/get-etf_fund_holdings.r`](R/get-etf_fund_holdings.r)
--   [`R/get-etf_gh_files.r`](R/get-etf_gh_files.r)
-
-### Screen Recording (Youtube)
-
-(Students asked if I could record myself exposing hidden API calls. The video is also embedded in the slides!)
-
--   [How to reveal API calls using Chrome or Safari (youtube)](https://youtu.be/2L42vLAiM28)
-
+* [`src/sim_compute_request_scenarios.py`](src/sim_compute_request_scenarios.py)
+  * used to generate csv files in `data/`
+    * [`data/compute_request_scenarios.csv`](data/compute_request_scenarios.csv)
+    * [`data/compute_instance_profiles.csv`](data/compute_instance_profiles.csv)
 
 ## Resources
 
@@ -32,6 +27,7 @@ A collection of links and materials relevant to Danton Noriega-Goodwin's Breakou
     -   AI Assistants (LLM Chatbots)
         - [Claude AI](https://claude.ai)
         - [ChatGPT](https://chatgpt.com)
+        - [Gemini](https://gemini.google.com/app)
     -   [Shell (`bash`) programming](https://datascienceatthecommandline.com)
         -   fast, universal, and timeless
         -   `awk`, `sed`, `less`, `tr`, `grep`, `cut`, `sort`, `cat`
