@@ -23,10 +23,19 @@ format:
 
 # Breakout Session
 
+# 🤘 Let's Rock 🎸 {.center}
+
+## Code
+
+* [**`github.com/dantonnoriega/csulb-data-day-2025`**](https://github.com/dantonnoriega/csulb-data-day-2025)
+  * [`notebook_csulb_data_day_2025.ipynb`](https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb)
+ 
+### 🧑‍💻 Let's code.
+
+
 ## Overview
 
 . . .
-
 
 - Learning Goals & Motivation
 - Problem & Solution
@@ -45,13 +54,6 @@ Experience with, and exposure to, the following
 - Mutual and Exchange Traded Funds (ETFs)
 
 # Motivation
-
-## Personal Finance
-
-- Maximize Annual Roth IRA Contribution
-- General Portfolio Diversification (`AAPL -> ETFs`)
-
-. . .
 
 ### Research Goal
 
@@ -87,46 +89,10 @@ Design an R program that
   * e.g. dataframe with columns  
     `ticker<chr>, data<list>`
 
-# 🤘 Let's Rock 🎸 {.center}
-
-## Hack
-
-### Browser *Web Inspector*
-
-- Safari
-  - Menu *Settings (`⌘ ,`) > Advanced > "Show Web Features for Web Developers"*
-  - Menu *Develop > Show Web Inspector (`⌥ ⌘ i`)*
-- Chrome
-  - Menu *View > Developer > "Developer Tools" (`⌥ ⌘ i`)*
-
-## Hack
-
-### Inspect `etf.com/VOO`
-
-- Go to [etf.com/VOO](https://www.etf.com/VOO)
-  - *Developer Tools / Web Inspector* > *Network*
-- Click *Holdings*
-  - Scroll down to *View All*
-- Web Inspector filter to *"XHR/Fetch"*
-  - Find `holdings` > Right-click *"Copy as cURL"*
-- Paste and interrogate!
-
-## 📺 Youtube Video
-
-{{< video https://youtu.be/2L42vLAiM28 width="1100" height="550" >}}
-
-## Code
-
-[Session is complete, but here are the scripts!]
-
-- [`get-etf_fund_holdings.r`](https://github.com/dantonnoriega/csulb-data-day-2024/blob/main/R/get-etf_fund_holdings.r)
-- [`get-etf_gh_files.r`](https://github.com/dantonnoriega/csulb-data-day-2024/blob/main/R/get-etf_gh_files.r)
- 
-### 🧑‍💻 Let's code.
 
 # Resources
 
 * Find everything from today!  
-  [**👩🏽‍💻 github.com/dantonnoriega/csulb-data-day-2024**](https://github.com/dantonnoriega/csulb-data-day-2024)
+  [**👩🏽‍💻 github.com/dantonnoriega/csulb-data-day-2025**](https://github.com/dantonnoriega/csulb-data-day-2025)
 * Stay in touch!  
   [**🌐 danton.codes**](http://danton.codes)
