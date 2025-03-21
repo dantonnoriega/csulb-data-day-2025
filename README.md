@@ -12,7 +12,7 @@ A collection of links and materials relevant to Danton Noriega-Goodwin's Breakou
 
 #### Colab Notebook
 
-* https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb
+* [`notebook_csulb_data_day_2025.ipynb`](https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb)
   * Top left, click "Open in Colab"
   * _Requires a Google Account!_
 
