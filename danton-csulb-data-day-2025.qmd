@@ -1,6 +1,6 @@
 ---
 title: '"Vibecoding" with Guardrails'
-subtitle: "How LLMs Have Transformed My Data Science Workflow"
+subtitle: "How LLMs Have Transformed My Data Science Workflow---and How They'll Change Yours"
 author: "<b>Danton Noriega-Goodwin</b>"
 date: "March 22, 2025"
 format: 
@@ -21,76 +21,80 @@ format:
         </style>
 ---
 
+## About Danton
+
+- Danton Roberto Noriega-Goodwin 🇨🇱 🇺🇸
+- Staff Data Scientist at Apple (7 years) 👨🏽‍💻
+- OCC, UCI, CSULB, Georgetown, Duke 😱
+- Fun Facts 🥏 🎸
+
+## About Zoe
+
+- Zoe Arias
+- CSULB Math & Stats
+- Fun Facts
+
 # Breakout Session
-
-# 🤘 Let's Rock 🎸 {.center}
-
-## Code
-
-* [**`github.com/dantonnoriega/csulb-data-day-2025`**](https://github.com/dantonnoriega/csulb-data-day-2025)
-  * [`notebook_csulb_data_day_2025.ipynb`](https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb)
- 
-### 🧑‍💻 Let's code.
-
 
 ## Overview
 
 . . .
 
-- Learning Goals & Motivation
-- Problem & Solution
+- Learning Goals
+- Motivating Problem
 - Approach
-- Hack & Code!
+- Code
 
 ## Learning Goals
 
-Experience with, and exposure to, the following
+. . .
+
+- Exposure to industry-inspired problem
+- Work with industry-relevant(ish) data 
+- **Practice coding with AI**
+- `polars`, `plotnine` maybe **Claude AI**?
+
+## Motivating Problem
 
 . . .
 
-- R Programming
-- Browser Developer View (Chrome & Safari)
-- APIs
-- Mutual and Exchange Traded Funds (ETFs)
+### Compute Infrastructure Planning
 
-# Motivation
+- Many large tech companies build and sell compute
+  - Amazon Web Services (AWS)
+  - Google Cloud Platform (GCP)
+  - Microsoft Azure
 
-### Research Goal
+## Motivating Problem
 
-Select the smallest set of ETFs (or Mutual Funds) that achieves
+### So What?
 
-1. Diversification
-2. Minimal cost
-3. Balanced Risk
+*Every company*
 
-## Problem
-
-ETF websites are *purposefully* annoying.
-
-. . .
-
-- Cumbersome to access ETF portfolios (holdings) data
-- Impossible to do basic analysis and comparisons
-- Make you pay to access additional information
-
-## Solution {.center}
-
-*Find a website with an API that is easy to reverse engineer.*
-
-# 👀 [etf.com](https://www.etf.com)
+- consumes compute infrastructure
+- plans and budgets for compute
+- must balance cost vs performance
 
 ## Approach
 
-Design an R program that
+. . .
 
-* Takes ETF tickers (e.g. `VOO`) as inputs
-* Fetches ETF holdings data from the API
-* Processes and returns a nested dataframe of holdings data
-  * e.g. dataframe with columns  
-    `ticker<chr>, data<list>`
+"Vibecoding" with guardrails
 
+* Incremental
+* Use the docs
+* *Build expertise*
 
-# Resources
+# 🤘 Let's Code 🎸 {.center}
+
+## 🧑‍💻 Links
+
+* [**`github.com/dantonnoriega/csulb-data-day-2025`**](https://github.com/dantonnoriega/csulb-data-day-2025)
+  * [`notebook_csulb_data_day_2025.ipynb`](https://github.com/dantonnoriega/csulb-data-day-2025/blob/main/notebook_csulb_data_day_2025.ipynb)
+    * Top left, click "Open in Colab"
+    * (Requires a Google Account!)
+
+## Resources
 
 * Find everything from today!  
   [**👩🏽‍💻 github.com/dantonnoriega/csulb-data-day-2025**](https://github.com/dantonnoriega/csulb-data-day-2025)
